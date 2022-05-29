@@ -6,7 +6,7 @@ This project was carried out to fulfill one of the assignments for the Enterpris
 
 ## Deployment
 
-To deploy this project run
+To deploy this project run in terminal
 
 ```bash
 npm install
