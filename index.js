@@ -11,7 +11,7 @@ app.use(bodyparser.json());
 
 
 app.listen('3000',()=>{
-    console.log('server is running....');
+    console.log('Node JS Berjalan');
 })
 
 
@@ -30,20 +30,13 @@ db.connect((err)=>{
     if(err) throw err;
     else
     {
-        console.log('Database terhubung');
+        console.log('Terhubung ke Database');
     }
 });
 
 
-// REST API CURD
-
-app.get('/api',(req,res)=>{
-    res.send('API berjalan');
-});
-
 
 // Create data 
-
 app.post('/api/create',(req,res)=>{
 
     console.log(req.body);
@@ -55,12 +48,10 @@ app.post('/api/create',(req,res)=>{
             if(err) throw err;
             res.send('data inserted');
     });        
-
-
 });
 
 
-// Read data 
+// Melihat data
 app.get('/api/read',(req,res)=>{
     // sql query 
     let sql = `SELECT * FROM karyawan`;
@@ -71,7 +62,7 @@ app.get('/api/read',(req,res)=>{
     });
 })
 
-// Read single data 
+// Melihat single data 
 app.get('/api/read/:id',(req,res)=>{
     console.log(req.params.id);
     // sql query 
@@ -82,13 +73,10 @@ app.get('/api/read/:id',(req,res)=>{
     db.query(sql,(err,result)=>{
         if(err) throw err;
         res.send(result);
-    });          
-
-
+    });
 });
 
-// update single data 
-
+// Mengupdate single Data
 app.put('/api/update/:id',(req,res)=>{
         console.log(req.params.id);
         // sql query 
@@ -109,9 +97,7 @@ app.put('/api/update/:id',(req,res)=>{
 
 
 // delete single data 
-
 app.delete('/api/delete/:id',(req,res)=>{
-
     // sql query 
     let sql = `DELETE FROM karyawan
                 WHERE karyawan_id = '${req.params.id}'
@@ -122,18 +108,3 @@ app.delete('/api/delete/:id',(req,res)=>{
         res.send('data deleted');
     });         
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
