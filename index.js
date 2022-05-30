@@ -10,6 +10,7 @@ app.use(cors());
 app.use(bodyparser.json());
 
 
+// Port localhost
 app.listen('3000',()=>{
     console.log('Node JS Berjalan');
 })
