@@ -34,5 +34,5 @@ Clone this repository
 
 ## Documentation
 
-[Not created yet](https://youtube.com)
+[Not created yet](https://youtu.be/19WY6M9leA4)
 
