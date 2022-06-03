@@ -12,7 +12,7 @@ app.use(bodyparser.json());
 
 // Port localhost
 app.listen('3000',()=>{
-    console.log('Node JS Berjalan');
+    console.log('Node Berjalan');
 })
 
 
@@ -38,7 +38,6 @@ db.connect((err)=>{
 
 // Membuat data 
 app.post('/api/create',(req,res)=>{
-
     console.log(req.body);
 
     // sql query 
@@ -46,7 +45,7 @@ app.post('/api/create',(req,res)=>{
     VALUES ('${req.body.nama}', '${req.body.alamat}' ,'${req.body.email}', '${req.body.password}','${req.body.username}','${req.body.nik}','${req.body.roles}')`; 
     db.query(sql,(err,result)=>{
             if(err) throw err;
-            res.send('data inserted');
+            res.send('Data berhasil dibuat');
     });        
 });
 
@@ -91,7 +90,7 @@ app.put('/api/update/:id',(req,res)=>{
         // run query 
         db.query(sql,(err,result)=>{
                 if(err) throw err;
-                res.send('data updated');
+                res.send('Data berhasil diupdate');
         })            
 })
 
@@ -105,6 +104,6 @@ app.delete('/api/delete/:id',(req,res)=>{
     //    run query 
     db.query(sql,(err,result)=>{
         if(err) throw err;
-        res.send('data deleted');
+        res.send('Data berhasil dihapus');
     });         
 });
