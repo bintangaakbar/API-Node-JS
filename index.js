@@ -18,7 +18,6 @@ app.listen('3000',()=>{
 
 
 // mysql database connection 
-
 var db = mysql.createConnection({
     host:'localhost',
     user:'root',
@@ -37,7 +36,7 @@ db.connect((err)=>{
 
 
 
-// Create data 
+// Membuat data 
 app.post('/api/create',(req,res)=>{
 
     console.log(req.body);
